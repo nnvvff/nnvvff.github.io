@@ -5,8 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Haomin Bao</title>
   <meta name="description" content="Haomin Bao (包浩民) is an MPhil student in the School of Computing and Data Science at The University of Hong Kong, supervised by Kai Han.">
-  {{- $favicon := (resources.Get "images/favicon-avatar.png").Resize "64x64 png" -}}
-  {{- $touchIcon := (resources.Get "images/favicon-avatar.png").Resize "180x180 png" -}}
+  {{- $favicon := (resources.Get "images/favicon-avatar-nailong.png").Resize "64x64 png" -}}
+  {{- $touchIcon := (resources.Get "images/favicon-avatar-nailong.png").Resize "180x180 png" -}}
   <link rel="icon" type="image/png" sizes="64x64" href="{{ $favicon.RelPermalink }}">
   <link rel="apple-touch-icon" sizes="180x180" href="{{ $touchIcon.RelPermalink }}">
   <link rel="canonical" href="{{ .Permalink }}">
@@ -33,7 +33,7 @@
     .nav{display:flex;gap:24px;font-size:13px}
     .nav a{color:var(--muted)}
     .layout{max-width:1160px;margin:0 auto;padding:52px 36px 64px;display:grid;grid-template-columns:260px minmax(0,1fr);gap:54px}
-    .profile{align-self:start;position:sticky;top:40px;text-align:center}
+    .profile{align-self:start;position:sticky;top:80px;margin-top:56px;text-align:center}
     .profile-photo{display:block;width:230px;height:230px;max-width:100%;aspect-ratio:1;object-fit:cover;border-radius:50%;margin:0 auto 24px}
     .profile-divider{width:190px;max-width:85%;height:1px;border:0;background:var(--line);margin:22px auto 15px}
     .profile h1{font-size:31px;line-height:1.25;letter-spacing:-.7px;margin:0 0 5px;font-weight:800}
@@ -65,9 +65,9 @@
     footer{max-width:1160px;margin:auto;padding:0 36px 25px;color:var(--muted);font-size:12px}
     .footer-inner{border-top:1px solid var(--line);padding-top:18px}
     @media(max-width:800px){.layout{gap:36px;grid-template-columns:185px minmax(0,1fr);padding:38px 25px 48px}.masthead-inner{padding:15px 25px}.nav{gap:16px}.profile h1{font-size:26px}.profile-photo{width:180px;height:180px}h2{font-size:22px}footer{padding-left:25px;padding-right:25px}}
-    @media(max-width:620px){.masthead-inner{padding:14px 22px}.nav{gap:14px}.nav a:first-child,.nav a:last-child{display:none}.layout{display:block;padding:32px 22px 40px}.profile{position:static;margin-bottom:35px;padding-bottom:25px;border-bottom:1px solid var(--line)}.profile h1{font-size:30px}.profile-photo{width:210px;height:210px}.last-updated{margin-top:18px}section{margin-bottom:30px}h2{font-size:22px}.paper-title{font-size:16px}footer{padding-left:22px;padding-right:22px}}
+    @media(max-width:620px){.masthead-inner{padding:14px 22px}.nav{gap:14px}.nav a:first-child,.nav a:last-child{display:none}.layout{display:block;padding:32px 22px 40px}.profile{position:static;margin-top:16px;margin-bottom:35px;padding-bottom:25px;border-bottom:1px solid var(--line)}.profile h1{font-size:30px}.profile-photo{width:210px;height:210px}.last-updated{margin-top:18px}section{margin-bottom:30px}h2{font-size:22px}.paper-title{font-size:16px}footer{padding-left:22px;padding-right:22px}}
     @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
-    @media print{.masthead,.skip{display:none}.layout{padding:0;gap:30px}.profile{position:static}a{color:inherit}section{break-inside:avoid}footer{padding:0}}
+    @media print{.masthead,.skip{display:none}.layout{padding:0;gap:30px}.profile{position:static;margin-top:0}a{color:inherit}section{break-inside:avoid}footer{padding:0}}
   </style>
 </head>
 <body>
@@ -103,7 +103,7 @@
       <section id="education" aria-labelledby="education-title">
         <h2 id="education-title"><span class="section-icon" aria-hidden="true">📖</span>Educations</h2>
         <ul class="entries education-list">
-          <li><strong>2026.09 – 2028.06 (expected):</strong> MPhil, School of Computing and Data Science, The University of Hong Kong. <span class="venue">Currently enrolled.</span></li>
+          <li><strong>2026.09 – 2028.06 (expected):</strong> MPhil, School of Computing and Data Science, The University of Hong Kong.</li>
           <li><strong>2022.09 – 2026.06:</strong> B.Eng. in Computer Science, Chongqing University.</li>
         </ul>
       </section>
