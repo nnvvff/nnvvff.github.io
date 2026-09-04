@@ -3,15 +3,19 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Haomin Bao | HKU CDS</title>
+  <title>Haomin Bao</title>
   <meta name="description" content="Haomin Bao (包浩民) is an MPhil student in the School of Computing and Data Science at The University of Hong Kong, supervised by Kai Han.">
+  {{- $favicon := (resources.Get "images/favicon-avatar.png").Resize "64x64 png" -}}
+  {{- $touchIcon := (resources.Get "images/favicon-avatar.png").Resize "180x180 png" -}}
+  <link rel="icon" type="image/png" sizes="64x64" href="{{ $favicon.RelPermalink }}">
+  <link rel="apple-touch-icon" sizes="180x180" href="{{ $touchIcon.RelPermalink }}">
   <link rel="canonical" href="{{ .Permalink }}">
   <meta property="og:type" content="website">
-  <meta property="og:title" content="Haomin Bao | HKU CDS">
+  <meta property="og:title" content="Haomin Bao">
   <meta property="og:description" content="MPhil student at The University of Hong Kong, supervised by Kai Han. Publications and academic background.">
   <meta property="og:url" content="{{ .Permalink }}">
   <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="Haomin Bao | HKU CDS">
+  <meta name="twitter:title" content="Haomin Bao">
   <meta name="twitter:description" content="MPhil student at The University of Hong Kong, supervised by Kai Han. Publications and academic background.">
   <style>
     :root{color-scheme:light;--ink:#343a40;--muted:#66717b;--link:#287eaa;--line:#e8ebed;--paper:#fff}
@@ -28,16 +32,18 @@
     .home-link{font-size:17px;font-weight:650;color:var(--ink)}
     .nav{display:flex;gap:24px;font-size:13px}
     .nav a{color:var(--muted)}
-    .layout{max-width:1160px;margin:0 auto;padding:52px 36px 64px;display:grid;grid-template-columns:225px minmax(0,1fr);gap:64px}
-    .profile{align-self:start;position:sticky;top:40px}
-    .profile h1{font-size:27px;line-height:1.25;letter-spacing:-.7px;margin:0 0 5px;font-weight:800}
-    .chinese-name{font-size:21px;line-height:1.5;letter-spacing:2px;margin:0 0 13px;font-weight:400}
-    .profile-links{display:flex;align-items:center;gap:9px;margin:0;padding:0;list-style:none}
+    .layout{max-width:1160px;margin:0 auto;padding:52px 36px 64px;display:grid;grid-template-columns:260px minmax(0,1fr);gap:54px}
+    .profile{align-self:start;position:sticky;top:40px;text-align:center}
+    .profile-photo{display:block;width:230px;height:230px;max-width:100%;aspect-ratio:1;object-fit:cover;border-radius:50%;margin:0 auto 24px}
+    .profile-divider{width:190px;max-width:85%;height:1px;border:0;background:var(--line);margin:22px auto 15px}
+    .profile h1{font-size:31px;line-height:1.25;letter-spacing:-.7px;margin:0 0 5px;font-weight:800}
+    .chinese-name{font-size:23px;line-height:1.5;letter-spacing:2px;margin:0 0 13px;font-weight:400}
+    .profile-links{display:flex;align-items:center;justify-content:center;gap:13px;margin:0;padding:0;list-style:none}
     .profile-links a{display:flex;align-items:center;justify-content:center;width:38px;height:38px;border-radius:5px;transition:background-color .15s ease}
     .profile-links a:hover{background:#f0f3f5}
     .profile-links img{width:23px;height:23px;display:block;opacity:.78}
-    .last-updated{font-size:11px;line-height:1.8;color:#8a9299;margin:30px 0 0}
-    .last-updated time{display:block;white-space:nowrap;font-variant-numeric:tabular-nums}
+    .last-updated{font-size:12px;line-height:1.8;color:#8a9299;margin:18px 0 0;white-space:nowrap}
+    .last-updated time{display:inline;white-space:nowrap;font-variant-numeric:tabular-nums}
     main{min-width:0}
     section{margin:0 0 38px}
     section:last-child{margin-bottom:0}
@@ -58,8 +64,8 @@
     sup{font-size:.75em;line-height:0;vertical-align:super}
     footer{max-width:1160px;margin:auto;padding:0 36px 25px;color:var(--muted);font-size:12px}
     .footer-inner{border-top:1px solid var(--line);padding-top:18px}
-    @media(max-width:800px){.layout{gap:36px;grid-template-columns:185px minmax(0,1fr);padding:38px 25px 48px}.masthead-inner{padding:15px 25px}.nav{gap:16px}.profile h1{font-size:24px}h2{font-size:22px}footer{padding-left:25px;padding-right:25px}}
-    @media(max-width:620px){.masthead-inner{padding:14px 22px}.nav{gap:14px}.nav a:first-child,.nav a:last-child{display:none}.layout{display:block;padding:32px 22px 40px}.profile{position:static;margin-bottom:35px;padding-bottom:25px;border-bottom:1px solid var(--line)}.profile h1{font-size:29px}.last-updated{margin-top:18px}section{margin-bottom:30px}h2{font-size:22px}.paper-title{font-size:16px}footer{padding-left:22px;padding-right:22px}}
+    @media(max-width:800px){.layout{gap:36px;grid-template-columns:185px minmax(0,1fr);padding:38px 25px 48px}.masthead-inner{padding:15px 25px}.nav{gap:16px}.profile h1{font-size:26px}.profile-photo{width:180px;height:180px}h2{font-size:22px}footer{padding-left:25px;padding-right:25px}}
+    @media(max-width:620px){.masthead-inner{padding:14px 22px}.nav{gap:14px}.nav a:first-child,.nav a:last-child{display:none}.layout{display:block;padding:32px 22px 40px}.profile{position:static;margin-bottom:35px;padding-bottom:25px;border-bottom:1px solid var(--line)}.profile h1{font-size:30px}.profile-photo{width:210px;height:210px}.last-updated{margin-top:18px}section{margin-bottom:30px}h2{font-size:22px}.paper-title{font-size:16px}footer{padding-left:22px;padding-right:22px}}
     @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
     @media print{.masthead,.skip{display:none}.layout{padding:0;gap:30px}.profile{position:static}a{color:inherit}section{break-inside:avoid}footer{padding:0}}
   </style>
@@ -76,15 +82,18 @@
   </header>
   <div class="layout">
     <aside class="profile" aria-label="Profile">
+      {{- $portrait := (resources.Get "images/haomin-portrait.png").Resize "500x500 png" -}}
+      <img class="profile-photo" src="{{ $portrait.RelPermalink }}" width="230" height="230" alt="Portrait of Haomin Bao" fetchpriority="high">
       <h1>Haomin Bao</h1>
       <p class="chinese-name" lang="zh-Hans">包浩民</p>
+      <hr class="profile-divider" aria-hidden="true">
       <ul class="profile-links" aria-label="Academic and contact links">
         <li><a href="https://scholar.google.com/citations?user=bfgJ13cAAAAJ&amp;hl=en" aria-label="Google Scholar" title="Google Scholar"><img src="{{ "icons/google-scholar.svg" | relURL }}" width="23" height="23" alt="" aria-hidden="true"></a></li>
         <li><a href="https://github.com/nnvvff" aria-label="GitHub" title="GitHub"><img src="{{ "icons/github.svg" | relURL }}" width="23" height="23" alt="" aria-hidden="true"></a></li>
         <li><a href="mailto:baohaomineee@gmail.com" aria-label="Email: baohaomineee@gmail.com" title="Email"><img src="{{ "icons/mail.svg" | relURL }}" width="23" height="23" alt="" aria-hidden="true"></a></li>
       </ul>
       {{- $updated := now | time.In "Asia/Hong_Kong" -}}
-      <p class="last-updated">Last updated:<time datetime="{{ $updated.Format "2006-01-02" }}">{{ $updated.Format "2006-01-02" }}</time></p>
+      <p class="last-updated">Last updated: <time datetime="{{ $updated.Format "2006-01-02" }}">{{ $updated.Format "2006-01-02" }}</time></p>
     </aside>
     <main id="main">
       <section id="about" aria-labelledby="about-title">
