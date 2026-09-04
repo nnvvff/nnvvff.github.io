@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Haomin Bao | HKU CDS</title>
+  <meta name="description" content="Haomin Bao is a master's student at CDS, The University of Hong Kong, and a Computer Science graduate of Chongqing University. Explore his publications and academic background.">
+  <link rel="canonical" href="{{ .Permalink }}">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Haomin Bao | HKU CDS">
+  <meta property="og:description" content="Master’s student at HKU CDS. Publications, education, and academic background.">
+  <meta property="og:url" content="{{ .Permalink }}">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Haomin Bao | HKU CDS">
+  <meta name="twitter:description" content="Master’s student at HKU CDS. Publications, education, and academic background.">
+  <style>
+    :root{color-scheme:light;--ink:#343a40;--muted:#66717b;--link:#287eaa;--line:#e8ebed;--paper:#fff}
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth;scroll-padding-top:88px}
+    body{margin:0;background:var(--paper);color:var(--ink);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;font-size:16px;line-height:1.75;-webkit-font-smoothing:antialiased}
+    a{color:var(--link);text-decoration:none;text-underline-offset:3px}
+    a:hover{text-decoration:underline}
+    a:focus-visible{outline:2px solid var(--link);outline-offset:5px;border-radius:2px}
+    .skip{position:absolute;left:20px;top:-80px;background:white;padding:8px 16px;z-index:5}
+    .skip:focus{top:8px}
+    .masthead{border-bottom:1px solid var(--line)}
+    .masthead-inner{max-width:1160px;margin:auto;padding:17px 36px;display:flex;align-items:center;justify-content:space-between;gap:24px}
+    .home-link{font-size:17px;font-weight:650;color:var(--ink)}
+    .nav{display:flex;gap:24px;font-size:13px}
+    .nav a{color:var(--muted)}
+    .layout{max-width:1160px;margin:0 auto;padding:52px 36px 64px;display:grid;grid-template-columns:225px minmax(0,1fr);gap:64px}
+    .profile{align-self:start;position:sticky;top:40px}
+    .profile h1{font-size:27px;line-height:1.25;letter-spacing:-.7px;margin:0 0 13px;font-weight:700}
+    .role{font-size:15px;margin:0 0 3px}
+    .affiliation{font-size:14px;line-height:1.65;color:var(--muted);margin:0 0 24px}
+    .profile-links{list-style:none;padding:0;margin:0;font-size:14px}
+    .profile-links li{margin:8px 0}
+    .profile-links a{color:var(--ink)}
+    .meta-icon{width:22px;display:inline-block;color:var(--muted);font-size:12px}
+    main{min-width:0}
+    section{margin:0 0 38px}
+    section:last-child{margin-bottom:0}
+    h2{font-size:24px;font-weight:650;line-height:1.4;letter-spacing:-.45px;margin:0 0 17px;padding:0 0 10px;border-bottom:1px solid var(--line)}
+    .section-icon{font-size:22px;margin-right:9px}
+    p{margin:0 0 12px}
+    .entries{padding-left:21px;margin:0}
+    .entries li{padding-left:3px}
+    .entries strong{font-weight:600}
+    h3{font-size:18px;font-weight:600;margin:0 0 15px}
+    .paper-title{font-size:17px;font-weight:650;line-height:1.55;margin-bottom:7px}
+    .authors{font-size:14px;line-height:1.85;margin:0 0 5px}
+    .venue{font-size:14px;color:var(--muted);font-style:italic;margin:0 0 8px}
+    .paper-links{display:flex;gap:10px;align-items:center;font-size:14px;margin:0 0 12px}
+    .separator{color:#b0b8be}
+    .contributions{font-size:12px;color:var(--muted);margin:0}
+    sup{font-size:.75em;line-height:0;vertical-align:super}
+    footer{max-width:1160px;margin:auto;padding:0 36px 25px;color:var(--muted);font-size:12px}
+    .footer-inner{border-top:1px solid var(--line);padding-top:18px}
+    @media(max-width:800px){.layout{gap:36px;grid-template-columns:185px minmax(0,1fr);padding:38px 25px 48px}.masthead-inner{padding:15px 25px}.nav{gap:16px}.profile h1{font-size:24px}h2{font-size:22px}footer{padding-left:25px;padding-right:25px}}
+    @media(max-width:620px){.masthead-inner{padding:14px 22px}.nav{gap:14px}.nav a:first-child,.nav a:last-child{display:none}.layout{display:block;padding:32px 22px 40px}.profile{position:static;margin-bottom:35px;padding-bottom:25px;border-bottom:1px solid var(--line)}.profile h1{font-size:29px}.affiliation{margin-bottom:12px}.profile-links{display:flex;flex-wrap:wrap;gap:5px 22px}.profile-links li{margin:0}section{margin-bottom:30px}h2{font-size:22px}.paper-title{font-size:16px}footer{padding-left:22px;padding-right:22px}}
+    @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+    @media print{.masthead,.skip{display:none}.layout{padding:0;gap:30px}.profile{position:static}a{color:inherit}section{break-inside:avoid}footer{padding:0}}
+  </style>
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+  <header class="masthead">
+    <div class="masthead-inner">
+      <a class="home-link" href="{{ .Site.Home.RelPermalink }}">Homepage</a>
+      <nav class="nav" aria-label="Main navigation">
+        <a href="#about">About</a><a href="#education">Education</a><a href="#publications">Publications</a><a href="#honors">Honors</a>
+      </nav>
+    </div>
+  </header>
+  <div class="layout">
+    <aside class="profile" aria-label="Profile">
+      <h1>Haomin Bao</h1>
+      <p class="role">Master’s Student</p>
+      <p class="affiliation">CDS<br>The University of Hong Kong</p>
+      <ul class="profile-links">
+        <li><span class="meta-icon" aria-hidden="true">●</span>Hong Kong</li>
+        <li><span class="meta-icon" aria-hidden="true">↗</span><a href="https://github.com/nnvvff">GitHub</a></li>
+      </ul>
+    </aside>
+    <main id="main">
+      <section id="about" aria-labelledby="about-title">
+        <h2 id="about-title"><span class="section-icon" aria-hidden="true">💬</span>About Me</h2>
+        <p>I am currently a master’s student at CDS, The University of Hong Kong. Previously, I spent four wonderful years at Chongqing University, where I received my bachelor’s degree in Computer Science.</p>
+      </section>
+      <section id="education" aria-labelledby="education-title">
+        <h2 id="education-title"><span class="section-icon" aria-hidden="true">📖</span>Educations</h2>
+        <ul class="entries"><li><strong>2022.09 – 2026.06:</strong> B.Eng. in Computer Science, Chongqing University.</li></ul>
+      </section>
+      <section id="publications" aria-labelledby="publications-title">
+        <h2 id="publications-title"><span class="section-icon" aria-hidden="true">📝</span>Publications</h2>
+        <h3>Preprints</h3>
+        <ul class="entries"><li>
+          <article aria-label="Offline Reinforcement Learning for Plasma Control in Nuclear Fusion">
+            <p class="paper-title"><a href="https://arxiv.org/abs/2606.07550">Offline Reinforcement Learning for Plasma Control in Nuclear Fusion: Codebase and Benchmark</a></p>
+            <p class="authors">Yang Fu<sup>†</sup>, <strong>Haomin Bao<sup>†</sup></strong>, Rohit Sonker, Xiaoyan Hu, Aravind Venugopal, Jeff Schneider, Jiayu Chen<sup>‡</sup></p>
+            <p class="venue">Preprint, 2026</p>
+            <p class="paper-links"><a href="https://arxiv.org/pdf/2606.07550">Paper</a><span class="separator" aria-hidden="true">/</span><a href="https://github.com/LucasCJYSDL/Offline-RL-Kit-for-Nuclear-Fusion">Code</a></p>
+            <p class="contributions">† Equal contribution. &nbsp; ‡ Corresponding author.</p>
+          </article>
+        </li></ul>
+      </section>
+      <section id="honors" aria-labelledby="honors-title">
+        <h2 id="honors-title"><span class="section-icon" aria-hidden="true">🎖</span>Honors and Awards</h2>
+        <ul class="entries"><li><strong>2022–2023:</strong> National Scholarship, China.</li></ul>
+      </section>
+    </main>
+  </div>
+  <footer><div class="footer-inner">© {{ now.Year }} Haomin Bao</div></footer>
+</body>
+</html>

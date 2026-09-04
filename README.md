@@ -1,38 +1,34 @@
-# [Creator's Blog: Hugo Theme](https://github.com/HugoBlox/theme-blog)
+# Haomin Bao — Personal Website
 
-[![Screenshot](./.github/preview.png)](https://hugoblox.com/templates/)
+Personal academic homepage: https://nnvvff.github.io/
 
-The **Creator's Blog** Hugo Theme empowers you to easily create your own _personal blog_ or _build a business around your content_.
+## Content
 
-️**Trusted by 250,000+ researchers, educators, and students.** Highly customizable via the integrated **no-code, block-based website builder**, making every site truly personalized ⭐⭐⭐⭐⭐
+The site includes About Me, Educations, Publications (Preprints), and Honors and Awards.
+The publication credits follow the paper: † equal contribution; ‡ corresponding author.
 
-[![Get Started](https://img.shields.io/badge/-Get%20started-ff4655?style=for-the-badge)](https://hugoblox.com/templates/)
-[![Discord](https://img.shields.io/discord/722225264733716590?style=for-the-badge)](https://discord.com/channels/722225264733716590/742892432458252370/742895548159492138)  
-[![Twitter Follow](https://img.shields.io/twitter/follow/GetResearchDev?label=Follow%20on%20Twitter)](https://x.com/BuildLore)
+## Edit and preview
 
-Easily write technical content with plain text Markdown, LaTeX math, diagrams, RMarkdown, or Jupyter, and import publications from BibTeX.
+The homepage content and responsive styles live in `layouts/home.html`.
+Use Hugo **0.152.2** to preview locally:
 
-[Check out the latest demo](https://hugo-blog-theme.netlify.app/) of what you'll get in less than 10 minutes, or [view the showcase](https://hugoblox.com/creators/).
+```sh
+hugo server
+```
 
-The integrated [**Hugo Blox**](https://hugoblox.com) website builder and CMS makes it easy to create a beautiful website for free. Edit your site in the CMS (or your favorite editor), generate it with [Hugo](https://github.com/gohugoio/hugo), and deploy with GitHub or Netlify. Customize anything on your site with widgets, light/dark themes, and language packs.
+Build the production site with `hugo --minify`. The generated files are in `public/`.
+No Node dependencies or external theme downloads are needed for this homepage.
 
-- 👉 [**Get Started**](https://hugoblox.com/templates/)
-- 📚 [View the **documentation**](https://docs.hugoblox.com/)
-- 💬 [Chat with the **Hugo Blox Builder community**](https://discord.gg/z8wNYzb) or [**Hugo community**](https://discourse.gohugo.io)
-- ⬇️ **Automatically import citations from BibTeX** with the [Hugo Academic CLI](https://github.com/GetRD/academic-file-converter)
-- 🐦 Share your new site with the community: [@GetResearchDev](https://x.com/BuildLore) [@GeorgeCushen](https://twitter.com/GeorgeCushen) [#MadeWithHugoBlox](https://twitter.com/search?q=%23MadeWithHugoBlox&src=typed_query)
-- 🗳 [Take the survey and help us improve #OpenSource](https://forms.gle/NioD9VhUg7PNmdCAA)
-- 🚀 [Contribute improvements](https://github.com/HugoBlox/hugo-blox-builder/blob/main/CONTRIBUTING.md) or [suggest improvements](https://github.com/HugoBlox/hugo-blox-builder/issues)
-- ⬆️ **Updating?** View the [Update Guide](https://docs.hugoblox.com/) and [Release Notes](https://github.com/HugoBlox/hugo-blox-builder/releases)
+## Deploy
 
-## We ask you, humbly, to support this open source movement
+Commits to `main` trigger `.github/workflows/deploy.yml`, which builds with Hugo and
+publishes to GitHub Pages. Pages source must be set to **GitHub Actions**.
 
-Today we ask you to defend the open source independence of the Hugo Blox Builder and themes 🐧
+If the GitHub username changes, rename this repository to `<new-username>.github.io`,
+update `baseURL` in `config/_default/hugo.yaml`, and update the profile link in the layout.
 
-We're an open source movement that depends on your support to stay online and thriving, but 99.9% of our creators don't give; they simply look the other way.
+## Notes
 
-### [❤️ Click here to become a GitHub Sponsor, unlocking awesome perks such as _exclusive academic templates and widgets_](https://hugoblox.com/sponsors/)
-
-## Demo credits
-
-- [Unsplash](https://unsplash.com/) images
+The earlier Hugo Blox starter files are retained for reference, but its sample blog posts,
+authors, tags, and uploaded assets are excluded from the published homepage.
+Add a portrait, email address, and Google Scholar link when supplied by the owner.
