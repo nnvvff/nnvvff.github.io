@@ -4,7 +4,7 @@ Personal academic homepage: https://nnvvff.github.io/
 
 ## Content
 
-The site includes About Me, Educations, Publications (Preprints), and Honors and Awards.
+The site includes About Me, Education, Publications (Preprints), and Honors and Awards.
 The publication credits follow the paper: † equal contribution; ‡ corresponding author.
 
 ## Edit and preview
