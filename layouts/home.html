@@ -5,8 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Haomin Bao</title>
   <meta name="description" content="Haomin Bao (包浩民) is an MPhil student in the School of Computing and Data Science at The University of Hong Kong, supervised by Kai Han.">
-  {{- $favicon := (resources.Get "images/favicon-avatar-nailong.png").Resize "64x64 png" -}}
-  {{- $touchIcon := (resources.Get "images/favicon-avatar-nailong.png").Resize "180x180 png" -}}
+  {{- $favicon := (resources.Get "images/favicon-avatar-nailong-large.png").Resize "64x64 png" -}}
+  {{- $touchIcon := (resources.Get "images/favicon-avatar-nailong-large.png").Resize "180x180 png" -}}
   <link rel="icon" type="image/png" sizes="64x64" href="{{ $favicon.RelPermalink }}">
   <link rel="apple-touch-icon" sizes="180x180" href="{{ $touchIcon.RelPermalink }}">
   <link rel="canonical" href="{{ .Permalink }}">
@@ -25,9 +25,9 @@
     a{color:var(--link);text-decoration:none;text-underline-offset:3px}
     a:hover{text-decoration:underline}
     a:focus-visible{outline:2px solid var(--link);outline-offset:5px;border-radius:2px}
-    .skip{position:absolute;left:20px;top:-80px;background:white;padding:8px 16px;z-index:5}
+    .skip{position:absolute;left:20px;top:-80px;background:white;padding:8px 16px;z-index:20}
     .skip:focus{top:8px}
-    .masthead{border-bottom:1px solid var(--line)}
+    .masthead{position:sticky;top:0;z-index:10;background:var(--paper);border-bottom:1px solid var(--line)}
     .masthead-inner{max-width:1160px;margin:auto;padding:17px 36px;display:flex;align-items:center;justify-content:space-between;gap:24px}
     .home-link{font-size:17px;font-weight:650;color:var(--ink)}
     .nav{display:flex;gap:24px;font-size:13px}
