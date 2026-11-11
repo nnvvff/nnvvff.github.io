@@ -98,7 +98,7 @@
     footer{max-width:1160px;margin:auto;padding:0 36px 25px;color:var(--muted);font-size:12px}
     .footer-inner{border-top:1px solid var(--line);padding-top:18px}
     @media(max-width:800px){.profile{left:25px;width:185px;top:clamp(80px,calc(100dvh - 414px),154px)}.layout{gap:36px;grid-template-columns:185px minmax(0,1fr);padding:38px 25px 48px}.masthead-inner{padding:15px 25px}.nav{gap:16px}.profile h1{font-size:26px}.profile-photo{width:180px;height:180px}h2{font-size:22px}footer{padding-left:25px;padding-right:25px}}
-    @media(max-width:620px){.masthead-inner{padding:14px 22px}.nav{gap:14px}.nav a:first-child,.nav a:last-child{display:none}.layout{display:block;padding:32px 22px 40px}.profile{position:static;top:auto;left:auto;width:auto;margin-top:16px;margin-bottom:35px;padding-bottom:25px;border-bottom:1px solid var(--line)}.profile h1{font-size:30px}.profile-photo{width:210px;height:210px}.last-updated{margin-top:18px}section{margin-bottom:30px}h2{font-size:22px}.paper-title{font-size:16px}footer{padding-left:22px;padding-right:22px}}
+    @media(max-width:620px){.masthead-inner{padding:14px 22px;flex-wrap:wrap;gap:12px}.nav{gap:14px}.nav a:first-child,.nav a:last-child{display:none}.layout{display:block;padding:32px 22px 40px}.profile{position:static;top:auto;left:auto;width:auto;margin-top:16px;margin-bottom:35px;padding-bottom:25px;border-bottom:1px solid var(--line)}.profile h1{font-size:30px}.profile-photo{width:210px;height:210px}.last-updated{margin-top:18px}section{margin-bottom:30px}h2{font-size:22px}.paper-title{font-size:16px}footer{padding-left:22px;padding-right:22px}}
     @media(min-width:621px) and (max-height:640px){.profile{top:84px}.profile-photo{width:160px;height:160px;margin-bottom:16px}.profile-divider{margin-top:14px;margin-bottom:10px}.last-updated{margin-top:12px}}
     @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
     @media print{.masthead,.skip{display:none}.layout{padding:0;gap:30px}.profile{position:static;width:auto;margin-top:0}a{color:inherit}section{break-inside:avoid}footer{padding:0}}
@@ -110,7 +110,7 @@
     <div class="masthead-inner">
       <a class="home-link" href="{{ .Site.Home.RelPermalink }}">Homepage</a>
       <nav class="nav" aria-label="Main navigation">
-        <a href="#about">About</a><a href="#education">Education</a><a href="#publications">Publications</a><a href="#honors">Honors</a>
+        <a href="#about">About</a><a href="#education">Education</a><a href="#experience">Experience</a><a href="#publications">Publications</a><a href="#honors">Honors</a>
       </nav>
     </div>
   </header>
@@ -138,6 +138,12 @@
         <ul class="entries education-list">
           <li><strong>2026.09 – 2028.06 (expected):</strong> MPhil, School of Computing and Data Science, The University of Hong Kong.</li>
           <li><strong>2022.09 – 2026.06:</strong> B.Eng. in Computer Science, Chongqing University.</li>
+        </ul>
+      </section>
+      <section id="experience" aria-labelledby="experience-title">
+        <h2 id="experience-title"><span class="section-icon" aria-hidden="true">💻</span>Experience</h2>
+        <ul class="entries">
+          <li><strong>2026.04 – 2026.06:</strong> Research Intern, LLM Post-training and Reinforcement Learning, China Mobile Jiutian Research Institute, Beijing.</li>
         </ul>
       </section>
       <section id="publications" aria-labelledby="publications-title">

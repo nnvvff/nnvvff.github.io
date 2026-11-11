@@ -5,7 +5,7 @@ an MPhil student at The University of Hong Kong.
 
 ## Content
 
-The site includes About Me, Education, Publications, and Honors and Awards.
+The site includes About Me, Education, Experience, Publications, and Honors and Awards.
 The publication credits follow the paper: † equal contribution; ‡ corresponding author.
 
 ## Edit and preview
