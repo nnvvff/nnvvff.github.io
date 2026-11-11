@@ -5,19 +5,51 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Haomin Bao</title>
   <meta name="google-site-verification" content="p5xkCuzH4Z9wLnQTcuavwu5hxfaQg_HWUKl5R1vpOVs">
-  <meta name="description" content="Haomin Bao (包浩民) is an MPhil student in the School of Computing and Data Science at The University of Hong Kong, supervised by Kai Han.">
-  {{- $favicon := (resources.Get "images/favicon-avatar-nailong-large.png").Resize "64x64 png" -}}
-  {{- $touchIcon := (resources.Get "images/favicon-avatar-nailong-large.png").Resize "180x180 png" -}}
-  <link rel="icon" type="image/png" sizes="64x64" href="{{ $favicon.RelPermalink }}">
+  {{- $description := "Haomin Bao (包浩民), MPhil student at The University of Hong Kong, supervised by Kai Han. Research and publications in offline reinforcement learning and plasma control." -}}
+  <meta name="description" content="{{ $description }}">
+  <meta name="author" content="Haomin Bao">
+  <meta name="robots" content="max-image-preview:large">
+  {{- $favicon := (resources.Get "images/favicon-avatar-nailong-large.png").Resize "96x96 png" | resources.Copy "favicon.png" -}}
+  {{- $touchIcon := (resources.Get "images/favicon-avatar-nailong-large.png").Resize "180x180 png" | resources.Copy "apple-touch-icon.png" -}}
+  {{- $portrait := (resources.Get "images/haomin-portrait.png").Resize "500x500 png" | resources.Copy "images/haomin-bao.png" -}}
+  <link rel="icon" type="image/png" sizes="96x96" href="{{ $favicon.RelPermalink }}">
   <link rel="apple-touch-icon" sizes="180x180" href="{{ $touchIcon.RelPermalink }}">
   <link rel="canonical" href="{{ .Permalink }}">
   <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Haomin Bao">
   <meta property="og:title" content="Haomin Bao">
-  <meta property="og:description" content="MPhil student at The University of Hong Kong, supervised by Kai Han. Publications and academic background.">
+  <meta property="og:description" content="{{ $description }}">
   <meta property="og:url" content="{{ .Permalink }}">
+  <meta property="og:image" content="{{ $portrait.Permalink }}">
+  <meta property="og:image:width" content="500">
+  <meta property="og:image:height" content="500">
+  <meta property="og:image:alt" content="Haomin Bao">
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="Haomin Bao">
-  <meta name="twitter:description" content="MPhil student at The University of Hong Kong, supervised by Kai Han. Publications and academic background.">
+  <meta name="twitter:description" content="{{ $description }}">
+  <meta name="twitter:image" content="{{ $portrait.Permalink }}">
+  <meta name="twitter:image:alt" content="Haomin Bao">
+  {{- $personID := printf "%s#person" .Permalink -}}
+  {{- $websiteID := printf "%s#website" .Permalink -}}
+  {{- $person := dict
+      "@type" "Person" "@id" $personID
+      "name" "Haomin Bao" "alternateName" "包浩民"
+      "url" .Permalink "image" $portrait.Permalink
+      "description" $description
+      "affiliation" (dict "@type" "CollegeOrUniversity" "name" "The University of Hong Kong" "url" "https://www.hku.hk/")
+      "alumniOf" (dict "@type" "CollegeOrUniversity" "name" "Chongqing University")
+      "sameAs" (slice "https://scholar.google.com/citations?user=bfgJ13cAAAAJ" "https://github.com/nnvvff" "https://www.alphaxiv.org/@haomin-bao") -}}
+  {{- $website := dict
+      "@type" "WebSite" "@id" $websiteID
+      "name" "Haomin Bao" "alternateName" "包浩民"
+      "url" .Permalink "inLanguage" "en"
+      "publisher" (dict "@id" $personID) -}}
+  {{- $profile := dict
+      "@type" "ProfilePage" "@id" (printf "%s#profile" .Permalink)
+      "name" "Haomin Bao" "url" .Permalink
+      "mainEntity" (dict "@id" $personID)
+      "isPartOf" (dict "@id" $websiteID) -}}
+  <script type="application/ld+json">{{ dict "@context" "https://schema.org" "@graph" (slice $website $profile $person) | jsonify | safeJS }}</script>
   <style>
     :root{color-scheme:light;--ink:#343a40;--muted:#66717b;--link:#287eaa;--line:#e8ebed;--paper:#fff}
     *{box-sizing:border-box}
@@ -84,7 +116,6 @@
   </header>
   <div class="layout">
     <aside class="profile" aria-label="Profile">
-      {{- $portrait := (resources.Get "images/haomin-portrait.png").Resize "500x500 png" -}}
       <img class="profile-photo" src="{{ $portrait.RelPermalink }}" width="230" height="230" alt="Portrait of Haomin Bao" fetchpriority="high">
       <h1>Haomin Bao</h1>
       <p class="chinese-name" lang="zh-Hans">包浩民</p>
@@ -100,7 +131,7 @@
     <main id="main">
       <section id="about" aria-labelledby="about-title">
         <h2 id="about-title"><span class="section-icon" aria-hidden="true">💬</span>About Me</h2>
-        <p>I am currently an MPhil student in the School of Computing and Data Science at The University of Hong Kong, supervised by <a href="https://www.kaihan.org/">Kai Han</a>. Previously, I also worked as a research intern under the supervision of <a href="https://agentic-intelligence-lab.org/members/jiayu-chen.html">Jiayu Chen</a>. I spent four wonderful years at Chongqing University, where I received my bachelor’s degree in Computer Science.</p>
+        <p>I am Haomin Bao (包浩民), an MPhil student in the School of Computing and Data Science at The University of Hong Kong, supervised by <a href="https://www.kaihan.org/">Kai Han</a>. Previously, I also worked as a research intern under the supervision of <a href="https://agentic-intelligence-lab.org/members/jiayu-chen.html">Jiayu Chen</a>. I spent four wonderful years at Chongqing University, where I received my bachelor’s degree in Computer Science.</p>
       </section>
       <section id="education" aria-labelledby="education-title">
         <h2 id="education-title"><span class="section-icon" aria-hidden="true">📖</span>Education</h2>

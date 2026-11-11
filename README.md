@@ -1,10 +1,11 @@
 # Haomin Bao — Personal Website
 
-Personal academic homepage: https://nnvvff.github.io/
+Personal academic homepage of [Haomin Bao (包浩民)](https://nnvvff.github.io/),
+an MPhil student at The University of Hong Kong.
 
 ## Content
 
-The site includes About Me, Education, Publications (Preprints), and Honors and Awards.
+The site includes About Me, Education, Publications, and Honors and Awards.
 The publication credits follow the paper: † equal contribution; ‡ corresponding author.
 
 ## Edit and preview
@@ -41,3 +42,12 @@ does not change when a visitor simply refreshes the page. Only the date (YYYY-MM
 The portrait and favicon source are in `assets/images/`. Hugo creates appropriately
 sized PNG assets for the profile photo, browser tab icon, and Apple touch icon.
 The profile photo retains the supplied photograph and uses a circular CSS frame.
+
+## Search metadata
+
+The homepage includes WebSite, ProfilePage, and Person JSON-LD, with verified academic
+profile links. Its canonical URL is the homepage, and `robots.txt` links to `sitemap.xml`.
+After substantive content changes, update `lastmod` in `content/_index.md` to the actual
+edit date so the sitemap reports it accurately. Keep the Search Console verification
+tag in the layout. Keep `/favicon.png`, `/apple-touch-icon.png`, and
+`/images/haomin-bao.png` stable when replacing the underlying images.
