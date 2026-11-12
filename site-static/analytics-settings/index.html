@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow">
+  <title>访问统计</title>
+  <style>
+    :root { color-scheme: light dark; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; color: #243244; background: #f6f7f9; }
+    * { box-sizing: border-box; }
+    body { margin: 0; padding: 64px 24px; }
+    main { max-width: 620px; margin: auto; padding: 32px; border: 1px solid #e0e5eb; border-radius: 16px; background: #fff; }
+    h1 { margin: 0 0 28px; font-size: 26px; }
+    .setting { display: flex; align-items: center; justify-content: space-between; gap: 24px; font-size: 18px; font-weight: 600; cursor: pointer; }
+    input { appearance: none; position: relative; flex: 0 0 48px; width: 48px; height: 28px; margin: 0; border: 0; border-radius: 20px; background: #adb7c4; cursor: pointer; }
+    input::before { content: ""; position: absolute; top: 4px; left: 4px; width: 20px; height: 20px; border-radius: 50%; background: #fff; transition: transform .15s; }
+    input:checked { background: #287eaa; }
+    input:checked::before { transform: translateX(20px); }
+    input:focus-visible, a:focus-visible { outline: 3px solid #287eaa; outline-offset: 5px; }
+    input:disabled { opacity: .5; cursor: not-allowed; }
+    p { margin: 14px 0 0; font-size: 14px; line-height: 1.8; color: #66717b; }
+    #message:not(:empty) { color: #b23c25; }
+    nav { display: grid; gap: 12px; margin-top: 32px; }
+    nav a { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 17px 18px; border: 1px solid #e0e5eb; border-radius: 10px; text-decoration: none; color: inherit; }
+    nav a:hover { background: #f6f7f9; border-color: #a2b5c5; }
+    .back { display: inline-block; margin-top: 28px; color: #287eaa; font-size: 14px; text-underline-offset: 3px; }
+    @media (max-width: 480px) { body { padding: 28px 16px; } main { padding: 24px; } }
+    @media (prefers-color-scheme: dark) { :root { color: #e5e9ef; background: #131820; } main { background: #1b232e; border-color: #354152; } nav a { border-color: #354152; } nav a:hover { background: #263140; } p { color: #aeb9c7; } .back { color: #79bada; } }
+    @media (prefers-reduced-motion: reduce) { input::before { transition: none; } }
+  </style>
+</head>
+<body>
+  <main>
+    <h1>访问统计</h1>
+    <label class="setting" for="exclude">
+      <span>排除我的访问</span>
+      <input id="exclude" type="checkbox" role="switch" aria-describedby="scope">
+    </label>
+    <p id="scope">同时适用于个人主页与 CQUISL，仅对当前浏览器生效。开启后请刷新已打开的网站页面；其他设备需分别开启，清除网站数据后需重新设置。</p>
+    <p id="message" role="status" aria-live="polite"></p>
+    <nav aria-label="分别查看浏览量">
+      <a href="https://dash.cloudflare.com/94cdc0a6ebad3efa22699cefe2d8dd34/web-analytics/overview/page-views?siteTag~in=21405fd5cbd9472ba92cdc3a0b604f7a&amp;excludeBots=Yes&amp;path=%2F" target="_blank" rel="noopener noreferrer"><span>个人主页浏览量</span><span aria-hidden="true">↗</span></a>
+      <a href="https://dash.cloudflare.com/94cdc0a6ebad3efa22699cefe2d8dd34/web-analytics/overview/page-views?siteTag~in=21405fd5cbd9472ba92cdc3a0b604f7a&amp;excludeBots=Yes&amp;path~starts=%2Fcquisl" target="_blank" rel="noopener noreferrer"><span>CQUISL 浏览量</span><span aria-hidden="true">↗</span></a>
+    </nav>
+    <a class="back" href="/">返回个人主页</a>
+    <noscript><p>请启用 JavaScript 后设置访问排除。</p></noscript>
+  </main>
+  <script>
+    (function () {
+      'use strict';
+      var key = 'haomin.analytics.exclude';
+      var control = document.getElementById('exclude');
+      var message = document.getElementById('message');
+
+      function unavailable() {
+        control.disabled = true;
+        message.textContent = '无法读取或保存设置，请允许此网站保存数据后重新打开本页。';
+      }
+
+      function refresh() {
+        try {
+          control.checked = window.localStorage.getItem(key) === '1';
+        } catch (_) {
+          unavailable();
+        }
+      }
+
+      control.addEventListener('change', function () {
+        try {
+          if (control.checked) window.localStorage.setItem(key, '1');
+          else window.localStorage.removeItem(key);
+          if ((window.localStorage.getItem(key) === '1') !== control.checked) throw new Error('Setting was not saved');
+          message.textContent = '';
+        } catch (_) {
+          control.checked = !control.checked;
+          unavailable();
+        }
+      });
+
+      window.addEventListener('storage', function (event) {
+        if (event.key === key || event.key === null) refresh();
+      });
+      refresh();
+    })();
+  </script>
+</body>
+</html>
