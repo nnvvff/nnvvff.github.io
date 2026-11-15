@@ -1,4 +1,7 @@
 User-agent: *
 Allow: /
+Disallow: /analytics-settings/
+Disallow: /cquisl/analytics/
 
-Sitemap: {{ "sitemap.xml" | absURL }}
+Sitemap: https://nnvvff.github.io/sitemap.xml
+Sitemap: https://nnvvff.github.io/cquisl/sitemap.xml
